@@ -8,12 +8,41 @@
     <title>Django Page</title>
 </head>
 <body>
+
     <div>
             <ul>
                 <li><a href="/inserttestcase/">录入测试数据</a></li>
-                <li><a href="">录入测试数据</a></li>
-                <li><a href="">录入测试数据</a></li>
+                <li class="active"><a href="#" >查看测试数据</a></li>
+                <li><a href="">执行接口测试</a></li>
             </ul>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead></thead>
+            <tbody>
+                <tr>
+                    <td>Case No</td>
+                    <td>Description</td>
+                    <td>Baseurl</td>
+                    <td>URL</td>
+                    <td>Method</td>
+                    <td>Request Data</td>
+                    <td>Create Time</td>
+                </tr>
+                {% for index in case %}
+                <tr>
+
+                    <td>{{ index.id }}</td>
+                    <td>{{ index.name }}</td>
+                    <td>{{ index.baseurl }}</td>
+                    <td>{{ index.url }}</td>
+                    <td>{{ index.method }}</td>
+                    <td>{{ index.args }}</td>
+                    <td>{{ index.create_time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
     <form action="/index/" method="post">
         <input type="text" name="uname">
