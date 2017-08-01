@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>Django Page</title>
+</head>
+<body>
+    <div>
+            <ul>
+                <li><a href="/inserttestcase/">录入测试数据</a></li>
+                <li><a href="">录入测试数据</a></li>
+                <li><a href="">录入测试数据</a></li>
+            </ul>
+    </div>
+    <form action="/index/" method="post">
+        <input type="text" name="uname">
+        <button type="submit" >post</button>
+        {% csrf_token %}
+    </form>
+    <div>{{ w }}</div>
+    <script type="application/javascript" language="JavaScript">
+
+    </script>
+</body>
+</html>

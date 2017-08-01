@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+{#    {% bootstrap_javascript %}#}
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+          <form method="post" action="/inserttestcase/" role="form">
+              <div class="input-group col-md-6 "><span class="input-group-addon">描述</span><input class="" type="text" name="desc" id="desc"></div>
+              <div class="input-group col-md-6"><span class="input-group-addon">baseurl:</span><input type="text" name="baseurl" id="baseurl"></div>
+              <div class="input-group col-md-6"><span class="input-group-addon">url:</span><input type="text" name="url" id="url"></div>
+              <div class="input-group col-md-6"><span class="input-group-addon">method:</span><input type="text" name="method" id="method" value="post"></div>
+              <div class="input-group col-md-6"><span class="input-group-addon">args:</span><textarea  class=""  rows="3" type="text" name="args" id="args"></textarea></div>
+              <button type="submit" id="test" >test</button>
+              {% csrf_token %}
+          </form>
+      </div>
+  </div>
+
+</body>
+<script>
+{#    $("#test").bind("click",function test() {#}
+{#        var baseurl = $("#baseurl").val();#}
+{#        var u = $("#url").val();#}
+{#        var args = $("#args").val();#}
+{#        datas = {"baseurl":baseurl,"url": u,"args":args};#}
+{#        $.get("/inserttestcase/",#}
+{#            datas,#}
+{#            function () {#}
+{#                alert("success");#}
+{#            });#}
+{#    });#}
+</script>
+</html>
