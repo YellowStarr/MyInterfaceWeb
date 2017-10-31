@@ -21,14 +21,14 @@ def inserttestcase(request):
         return render(request,"inserttestcase.html")
     elif request.method == "POST":
         name = request.POST.get("desc","")
-        n=name.encode('utf-8')
+        # n=name.encode('utf-8')
         baseurl = request.POST.get("baseurl","")
         url = request.POST.get("url","")
         args = request.POST.get("args","")
         methods = request.POST.get("method","")
         # arg=eval(args)
         print "-----------"+baseurl
-        r={"name":n,"baseurl":baseurl,"url":url,"args":args,'method':methods}
+        r={"name":name,"baseurl":baseurl,"url":url,"args":args,'method':methods}
         # if not type(r):
         insertCase(r)
         return render(request, "inserttestcase.html")
@@ -38,6 +38,7 @@ def insertCase(data):
     case.save()
     print "insert"
 
+# 获取全部用例
 def selectCase():
     cases = Testcase.objects.all()
     return cases

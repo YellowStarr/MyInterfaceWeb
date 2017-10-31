@@ -8,9 +8,46 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        ul li{
+            list-style:none;
+            margin-left: -40px;
+        }
+        .left{
+            width: 200px;
+            height: 600px;
+            background-color: cadetblue;
+            float: left;
+            position: absolute;
+        }
+        .content{
+            width: 1000px;
+            height: auto;
+            position: relative;
+            margin-left: 220px;
+        }
+        .left-tab{
+            width: 200px;
+            height: 80px;
+            border-bottom: 1px solid whitesmoke;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+        }
+        .left-tab a{
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+<div class="left">
+            <ul>
+                <li class="active left-tab"><a href="#">录入测试数据</a></li>
+                <li class="left-tab"><a href="/index/" >查看测试数据</a></li>
+                <li class="left-tab"><a href="">执行接口测试</a></li>
+            </ul>
+    </div>
+  <div class="container content">
       <div class="row">
           <form method="post" action="/inserttestcase/" role="form">
               <div class="input-group col-md-6 "><span class="input-group-addon">描述</span><input class="" type="text" name="desc" id="desc"></div>
